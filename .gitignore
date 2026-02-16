@@ -1,3 +1,4 @@
+*.versionsBackup
 .checkstyle
 target
 .classpath

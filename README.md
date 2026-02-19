@@ -7,6 +7,10 @@
 1. 02-18-2026: Adds a new overload of resolveToolDefinitions to the ToolCallingManager, that takes the Prompt object, so we have access to that information at tool call resolution time. Propagates that change down through DefaultToolCallingManager and into the OllamaApi and OllamaChatModel.
 2. That's it so far.
 
+# Licensing
+
+1. Spring AI is Apache V2 licensed, and consider all of our changes to be so licensed as well. 
+
 
 ### Spring Boot Version Compatibility
 

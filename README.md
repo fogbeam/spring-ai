@@ -2,6 +2,12 @@
 # Spring AI [![build status](https://github.com/spring-projects/spring-ai/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/spring-projects/spring-ai/actions/workflows/continuous-integration.yml) [![build status](https://github.com/spring-projects/spring-ai-integration-tests/actions/workflows/spring-ai-integration-tests.yml/badge.svg)](https://github.com/spring-projects/spring-ai-integration-tests/actions/workflows/spring-ai-integration-tests.yml)
 -->
 
+# Changes from upstream:
+
+1. 02-18-2026: Adds a new overload of resolveToolDefinitions to the ToolCallingManager, that takes the Prompt object, so we have access to that information at tool call resolution time. Propagates that change down through DefaultToolCallingManager and into the OllamaApi and OllamaChatModel.
+2. That's it so far.
+
+
 ### Spring Boot Version Compatibility
 
 > **Spring AI 2.x.x** ([main](https://github.com/spring-projects/spring-ai/tree/main) branch) - Spring Boot `4.x`

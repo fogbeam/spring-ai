@@ -35,6 +35,10 @@ public interface ToolCallingManager {
 	 */
 	List<ToolDefinition> resolveToolDefinitions(ToolCallingChatOptions chatOptions);
 
+	default List<ToolDefinition> resolveToolDefinitions(ToolCallingChatOptions chatOptions, Prompt prompt) {
+		return List.of();
+	}
+
 	/**
 	 * Execute the tool calls requested by the model.
 	 */

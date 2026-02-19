@@ -108,6 +108,16 @@ public final class OllamaApi {
 		Assert.notNull(chatRequest, REQUEST_BODY_NULL_ERROR);
 		Assert.isTrue(!chatRequest.stream(), "Stream mode must be disabled.");
 
+		// FOGBEAM: 
+		// OK, if we wanted to, we could intercept the request here and do any custom
+		// munging up that we want to do. The ChatRequest object
+		// contains a list of Tools, which we can dynamically add to or remove from.
+		// BUT... is this the right placce to do that, or is there somewhere better?
+		// Maybe let's find where the ChatRequest is being built and consider intercepting things
+		// there instead? 
+		
+		
+		
 		return this.restClient.post()
 			.uri("/api/chat")
 			.body(chatRequest)

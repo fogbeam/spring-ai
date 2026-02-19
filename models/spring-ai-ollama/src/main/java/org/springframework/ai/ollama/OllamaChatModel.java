@@ -516,7 +516,11 @@ public class OllamaChatModel implements ChatModel {
 			requestBuilder.keepAlive(requestOptions.getKeepAlive());
 		}
 
-		List<ToolDefinition> toolDefinitions = this.toolCallingManager.resolveToolDefinitions(requestOptions);
+		// FOGBEAM: OK, this looks like another place we could consider manipulating the
+		// Tools list if we want to implement some sort of "dynamic tool" mechanism.
+		// OR, maybe we need to go into the ToolCallingManager and work with that?
+
+		List<ToolDefinition> toolDefinitions = this.toolCallingManager.resolveToolDefinitions(requestOptions, prompt);
 		if (!CollectionUtils.isEmpty(toolDefinitions)) {
 			requestBuilder.tools(this.getTools(toolDefinitions));
 		}

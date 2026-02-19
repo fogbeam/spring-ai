@@ -101,6 +101,8 @@ public final class DefaultToolCallingManager implements ToolCallingManager {
 	public List<ToolDefinition> resolveToolDefinitions(ToolCallingChatOptions chatOptions) {
 		Assert.notNull(chatOptions, "chatOptions cannot be null");
 
+		logger.info("Calling resolveToolDefinitions in DefaultToolCallingManager");
+
 		List<ToolCallback> toolCallbacks = new ArrayList<>(chatOptions.getToolCallbacks());
 		for (String toolName : chatOptions.getToolNames()) {
 			// Skip the tool if it is already present in the request toolCallbacks.

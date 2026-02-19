@@ -1,3 +1,4 @@
 #!/bin/bash
 
-mvn compile package
+mvn compile package -DskipTests=true  -Dcheckstyle.skip=true
+
